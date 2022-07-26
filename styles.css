@@ -56,6 +56,7 @@ body {
   border-radius: 1rem 1rem 0 0;
   display: block;
   height: 100%;
+  z-index: 1;
 }
 
 #product-img-desktop {
@@ -192,6 +193,7 @@ body {
     display: block;
     width: 100%;
     height: 400px;
+    z-index: 1;
   }
 
   #product-img {
