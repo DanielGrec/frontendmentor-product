@@ -1,0 +1,181 @@
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Reapply the pointer cursor for anchor tags */
+a {
+  cursor: revert;
+}
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]){
+  display:none;
+}
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+
+/* ---------GENERAL STYLING--------- */
+/* font-family: 'Fraunces', serif; */
+/* font-family: 'Montserrat', sans-serif; */
+
+:root {
+  --color-darkcyan: hsl(158, 36%, 37%);
+  --color-cream: hsl(30, 38%, 92%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-darkblue: hsl(212, 21%, 14%);
+  --color-grayblue: hsl(228, 12%, 48%);
+}
+
+body {
+  background-color: var(--color-cream);
+}
+
+#product-img {
+  border-radius: 1rem 1rem 0 0;
+  background-image: url('/images/image-product-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+#product-img-desktop {
+  display: none;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  height: 550px;
+  margin: 1.5rem auto;
+}
+
+.product-info {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.pi-p1, .pi-p2, .pi-p3 span {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-grayblue);
+  margin: 0.5rem 0;
+}
+
+.pi-h1, .pi-p3 {
+  font-family: 'Fraunces', serif;
+  margin: 0.5rem 0;
+}
+
+.pi-p1 {
+  letter-spacing: 0.3rem;
+  font-size: 0.7rem;
+  margin-top: 0;
+}
+
+.pi-h1 {
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.pi-p2 {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.pi-p3 {
+  font-size: 2rem;
+  color: var(--color-darkcyan);
+}
+
+.small-price {
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-decoration: line-through;
+}
+
+.btn {
+  background-color: var(--color-darkcyan);
+  color: var(--color-white);
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  align-self: center;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+}
+
+
+@media screen and (min-width: 1440px) {
+  /* .container {
+    display: flex;
+    flex-direction: row;
+    margin: 1.5rem auto;
+    align-items: center;
+    width: 30%;
+  } */
+
+  .product-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    margin-top: 250px;
+  }
+
+  .product-info {
+    border-radius: 0 1rem 1rem 0;
+  }
+  
+  #product-img-desktop {
+    border-radius: 1rem 0 0 1rem;
+    /* background-image: url('/images/image-product-desktop.jpg');
+    background-size: cover; */
+    display: block;
+  }
+
+  #product-img {
+    display: none;
+  }
+
+}
